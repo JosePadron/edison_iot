@@ -5,7 +5,7 @@ var led = new mraa.Gpio(12); // Setup IO
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var arduinoFileName = "/tmp/led.txt";
+var tempFile = "/tmp/led.txt";
 
 led.dir(mraa.DIR_OUT); // Output
 function sendResponse(ledOn, remoteIP, response)
@@ -72,8 +72,7 @@ function processRequest(request, response)
    }
    else if(pathName == "/")
    {
-   fs.exists(tempFile, function (exists)
-      {
+   fs.exists(tempFile, function (exists){
          if (exists)
          {
             fs.readFile(tempFile, function(err,data)
