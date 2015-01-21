@@ -13,7 +13,7 @@ function sendResponse(ledOn, remoteIP, response) {
     if (remoteIP != null){
          console.log('\nRequest to switch LED ' + (ledOn?'On':'Off'));
          console.log('from ' + remoteIP);
-         led.write(ledOn);
+         led.write(ledOn?1:0);
          var fileStream = fs.createWriteStream(arduinoFileName);
          fileStream.write(ledOn + "\n" + remoteIP + "\nOK\n");
          fileStream.end();
