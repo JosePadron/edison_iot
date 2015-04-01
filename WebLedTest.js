@@ -5,9 +5,9 @@ var led = new mraa.Gpio(12); // Setup IO
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-
 var arduinoFileName = "/tmp/led.txt";
 
+led.dir(mraa.DIR_OUT); // Output
 function sendResponse(ledOn, remoteIP, response) {
     
     if (remoteIP != null){
