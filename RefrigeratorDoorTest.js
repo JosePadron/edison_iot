@@ -5,16 +5,38 @@ var led = new mraa.Gpio(12); // Setup IO
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var arduinoFileName = "/tmp/led.txt";
+var  = "/tmp/led.txt";
+var greenBean = require("green-bean");
 
 led.dir(mraa.DIR_OUT); // Output
+
+function UpdateLed(ledOn)
+{
+   led.write(ledOn ? 1 : 0);
+}
+
+greenBean.connect("refrigerator", function(refrigerator)
+   {
+      refrigerator.doorState.read(function (value)
+         {
+            console.log("door state is:", value);
+            UpdateLed(value);
+         });
+
+      refrigerator.doorState.subscribe(function (value)
+         {
+            console.log("door state changed:", value);
+            UpdateLed(value);
+         });
+   });
+
 function sendResponse(ledOn, remoteIP, response)
 {
+
    if(remoteIP != null)
    {
       console.log('\nRequest to switch LED ' + (ledOn ? 'On':'Off'));
       console.log('from ' + remoteIP);
-      led.write(ledOn ? 1 : 0);
       var fileStream = fs.createWriteStream(tempFile);
       fileStream.write(ledOn + "\n" + remoteIP + "\nOK\n");
       fileStream.end();
