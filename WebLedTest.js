@@ -27,16 +27,14 @@ function sendResponse(ledOn, remoteIP, response)
    }
    else
    {
-      response.writeHead(200,
-         {  'Content-Type': 'text/html' });
+      response.writeHead(200,{'Content-Type': 'text/html' });
       response.write('<!DOCTYPE html><html lang="en"><head>');
       response.write('<meta charset="utf-8">');
       response.write('<meta http-equiv="refresh" content="30" />');
       response.write('<title>LED switch</title>');
       if(!ledOn)
       {
-         response.write('<style>body
-         {  background-color:black;color:white;}</style>');
+         response.write('<style>body{background-color:black;color:white;}</style>');
       }
       response.write('</head>');
 
@@ -62,8 +60,7 @@ function processRequest(request, response)
 {
    "use strict";
    var pathName = url.parse(request.url).pathname;
-   var remoteIP =
-      request.headers['X-Forwarded-For'] == undefined ? request.connection.remoteAddress : request.headers['X-Forwarded-For'];
+   var remoteIP = request.headers['X-Forwarded-For'] == undefined ? request.connection.remoteAddress : request.headers['X-Forwarded-For'];
 
    if(pathName == "/on")
    {
