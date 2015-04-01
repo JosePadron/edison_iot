@@ -1,3 +1,4 @@
+//Reference http://codefoster.com/edison-setup
 var mraa = require('mraa'); //create a reference to the built-in mraa library (which provides easy access to hardware capabilities)
 var led = new mraa.Gpio(13); //setup a variable for pin 13 which also happens to be an LED on the board (how convenient)
 led.dir(mraa.DIR_OUT); //tell pin 13 that it should act as an output pin for now
