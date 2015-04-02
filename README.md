@@ -77,8 +77,8 @@ Turns on/off LED from a web page. Use ifconfig to get ip address before running 
 
 Turns on/off LED based on the door status. Door status is displayed after refreshing the web page. Use ifconfig to get ip address before running script.
 
-    Connection: 
+    Connections: 
 
         GPIO12 -> LED -> 220 ohm -> Gnd
-        USB-> GreenBean board
+        USB -> GreenBean board -> Refrigerator
 
