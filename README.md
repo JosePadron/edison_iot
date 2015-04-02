@@ -57,6 +57,13 @@ Turns on/off LED (GPIO12) based on the switch (GPIO11) state.
         Gnd -> TouchSensor GND
         
         GPIO11-> TouchSensor SIG
+      
+  
+![TouchSensor](/media/IMG_20150401_180834.jpg?raw=true "Touch Sensor")
+
+![All Connections](/media/IMG_20150401_180553.jpg?raw=true "All Connections")
+
+![Switch Test Video](/media/VID_20150401_180515.mp4?raw=true "Switch Test Video")
 
 4- WebLedTest.js
 
