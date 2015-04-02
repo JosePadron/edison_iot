@@ -1,6 +1,6 @@
 #Welcome to the edison_iot wiki!
 
-Setup Steps:
+###Setup Steps:
 
 1- Download Intel software: https://software.intel.com/en-us/iot/getting-started
 
@@ -33,18 +33,18 @@ Setup Steps:
 9- If the GreenBean HID information is displayed, you are good to go!
 
 #Examples:
-1- HidTest.js 
+###1- HidTest.js 
 
 Displays all the HID devices conncected to the Edison board.
 
     Connection: 
         USB-> GreenBean board
 
-2- LedBlink.js
+###2- LedBlink.js
 
 Blinks LED (GPIO13) on the Arduino Breakout Kit every 500 ms.
 
-3- SwitchTest.js
+###3- SwitchTest.js
 
 Turns on/off LED (GPIO12) based on the switch (GPIO11) state. 
 
@@ -63,9 +63,9 @@ Turns on/off LED (GPIO12) based on the switch (GPIO11) state.
 
 ![All Connections](/media/IMG_20150401_180553.jpg?raw=true "All Connections")
 
-![Switch Test Video](/media/VID_20150401_180515.mp4?raw=true "Switch Test Video")
+####Switch Test Video: https://github.com/elrafapadron/edison_iot/blob/master/media/VID_20150401_180515.mp4
 
-4- WebLedTest.js
+###4- WebLedTest.js
 
 Turns on/off LED from a web page. Use ifconfig to get ip address before running script.
 
@@ -73,7 +73,7 @@ Turns on/off LED from a web page. Use ifconfig to get ip address before running 
 
         GPIO12 -> LED -> 220 ohm -> Gnd
 
-5- RefrigeratorDoorTest.js
+###5- RefrigeratorDoorTest.js
 
 Turns on/off LED based on the door status. Door status is displayed after refreshing the web page. Use ifconfig to get ip address before running script.
 
